@@ -1,0 +1,29 @@
+{
+  "name": "marionette-ide",
+  "version": "1.0.0",
+  "description": "Simple IDE for coding a Backbone.Marionette application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cipick/marionette-ide.git"
+  },
+  "keywords": [
+    "ide",
+    "backbone",
+    "marionette",
+    "node.js",
+    "webpack",
+    "sass",
+    "handlebars",
+    "coffeescript"
+  ],
+  "author": "cipick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cipick/marionette-ide/issues"
+  },
+  "homepage": "https://github.com/cipick/marionette-ide#readme"
+}

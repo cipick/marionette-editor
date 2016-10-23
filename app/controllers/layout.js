@@ -4,8 +4,9 @@ module.exports = {
     var layoutView = new LayoutView();
 
     layoutView.on('render', function(){
-      foldersController = require('./folders.js');
-      searchController = require('./search.js');
+      foldersController = require('./folders');
+      searchController = require('./search');
+      codeMirrorController = require('./codemirror');
 
       if(this.getRegion('menu')){
         this.getRegion('menu').show(foldersController.getView(filesCollection));
@@ -14,6 +15,10 @@ module.exports = {
 
       if(this.getRegion('search')){
         this.getRegion('search').show(searchController.getView(filesCollection));
+      }
+
+      if(this.getRegion('main')){
+        this.getRegion('main').show(codeMirrorController.getView(filesCollection));
       }
     })
 

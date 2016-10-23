@@ -4,6 +4,7 @@ var LayoutView = Marionette.View.extend({
   regions: {
     'search': '[data-region="search"]',
     'menu': '[data-region="menu"]',
+    'main': '[data-region="main"]',
   }
 })
 

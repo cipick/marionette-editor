@@ -4,7 +4,7 @@ module.exports = {
 	getView: function(filesCollection){
     searchView = new SearchView();
 
-    searchView.on('handle:change:input', search)
+    searchView.on('handle:change:input', search);
 
   	function search(query){
   		if(query.length < 1){

@@ -1,0 +1,36 @@
+link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css")
+script(src="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js")
+
+style.
+  .CodeMirror {
+    height: 90%;
+  }
+
+textarea#textarea #{source}
+
+a#save(style="cursor: pointer; z-index: 999; position:fixed;bottom: 10px;left: 24px; width: 50px; height: 50px; line-height: 50px; text-align: center; border-radius: 50%; overflow: hidden; background: #2E99F7; color: white;") save
+
+script.
+  myTextarea = document.getElementById('textarea');
+  save = document.getElementById('save');
+
+  var editor = CodeMirror.fromTextArea(myTextarea, {
+    lineNumbers: true,
+    mode: 'scss'
+  });
+  save.addEventListener('click', function(){
+    editor.save()
+    var url = "/file";
+    var method = "PUT";
+    var postData = JSON.stringify({data: myTextarea.value, path: '#{path}'});
+    var async = true;
+    var request = new XMLHttpRequest();
+    request.onload = function () {
+       var status = request.status; // HTTP response status, e.g., 200 for "200 OK"
+       var data = request.responseText; // Returned data, e.g., an HTML document.
+    }
+    request.open(method, url, async);
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    console.log(postData);
+    request.send(postData);
+  })

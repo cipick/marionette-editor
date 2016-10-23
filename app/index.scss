@@ -1,0 +1,7 @@
+.collapsible-body a span.badge {
+  opacity: 0;
+  transition: .5s opacity;
+}
+.collapsible-body a:hover span.badge {
+   opacity: 1;
+}

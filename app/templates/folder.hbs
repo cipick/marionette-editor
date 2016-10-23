@@ -1,0 +1,20 @@
+<a class='collapsible-header'>
+	<i class='material-icons' style='color:{{color}}'>library_books</i>
+	{{name}}
+	<span data-action='add' class='badge tooltipped' data-position='bottom' data-delay='50' data-tooltip='Add <%= name %>'>
+		<i class='material-icons'>note_add</i>
+	</span>
+</a>
+<div class='collapsible-body'>
+ 	<ul data-region='list'>{{#each contents}}
+		<li>
+			<a href='#{{content}}'>
+				"{{title}}"
+	 			<span class='badge' style='margin-top: 7px;' >
+		 			<i style='margin-right: 5px' class='material-icons tooltipped' data-action='remove' data-position='bottom' data-delay='50' data-tooltip='Delete'>not_interested</i>
+		 			<i class='material-icons tooltipped' data-action='source' data-position='bottom' data-delay='50' data-tooltip='View source'>code</i>
+		 		</span>
+		 	</a>
+		</li>
+	{{/each}}</ul>
+ </div>

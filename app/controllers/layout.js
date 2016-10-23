@@ -5,10 +5,15 @@ module.exports = {
 
     layoutView.on('render', function(){
       foldersController = require('./folders.js');
+      searchController = require('./search.js');
 
-      if(this.getRegion('sidebar')){
-        this.getRegion('sidebar').show(foldersController.getView(filesCollection));
+      if(this.getRegion('menu')){
+        this.getRegion('menu').show(foldersController.getView(filesCollection));
         window.$('.collapsible').collapsible();
+      }
+
+      if(this.getRegion('search')){
+        this.getRegion('search').show(searchController.getView(filesCollection));
       }
     })
 

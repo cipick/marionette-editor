@@ -1,4 +1,4 @@
-var Search = Marionette.View.extend({
+module.exports = Marionette.View.extend({
   template: require('../templates/search.hbs'),
   ui: {
   	results: '[data-ui="results"]'
@@ -28,4 +28,3 @@ var Search = Marionette.View.extend({
   }
 })
 
-module.exports = Search;

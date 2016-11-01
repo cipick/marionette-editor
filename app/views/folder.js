@@ -1,38 +1,43 @@
-var FolderView = Marionette.View.extend({
+module.exports = Marionette.View.extend({
   tagName: 'li',
   
   template: require('../templates/folder.hbs'),
 
+  regions: {
+    body: '[data-region="body"]'
+  },
+
   onRender: function(){
+    var filesCollection = new Backbone.Collection(this.model.get('children'))
+
+    var FilesView = require('./files');
+    filesView = new FilesView({collection: filesCollection});
+
+    this.getRegion('body').show(filesView);
+
     setTimeout(function(){
-      window.$('.collapsible').collapsible();
-      window.$('.tooltipped').tooltip({delay: 50});
+      $('.collapsible').collapsible();
     }, 1000);
   },
 
   events: {
-    'click [data-action="add"]': "eventActionClickAdd",
-    'click [data-action="remove"]': "eventActionClickRemove",
-    'click [data-action="source"]': "eventActionClickSource"
+    'click': 'eventActionClick',
+    'click [data-action="add"]': 'eventActionClickAdd'
+  },
+
+  eventActionClick: function(ev){
+    if($(ev.target).closest('.collapsible-body').length === 0){
+      if(this.model.has('children')){
+        ev.preventDefault();
+      }
+    }
   },
 
   eventActionClickAdd: function(ev){
     ev.stopPropagation();
+    ev.preventDefault();
 
-    this.trigger('handle:click:add');
-  },
-
-  eventActionClickRemove: function(ev){
-    ev.stopPropagation();
-
-    this.trigger('handle:click:remove');
-  },
-
-  eventActionClickSource: function(ev){
-    ev.stopPropagation();
-
-    this.trigger('handle:click:remove');
+    console.log('add');
   }
 });
 
-module.exports = FolderView;

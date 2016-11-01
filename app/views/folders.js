@@ -1,10 +1,6 @@
-var Folders = Marionette.CollectionView.extend({
+module.exports = Marionette.CollectionView.extend({
   className: 'collapsible collapsible-accordion',
   tagName: 'ul',
-	childView: require('./folder'),
-  onRender: function(){
-  	console.log(this)
-  }
+	childView: require('./folder')
 });
 
-module.exports = Folders;

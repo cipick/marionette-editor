@@ -1,5 +1,6 @@
 require('./index.scss');
 require('./vendor/collapsible.js');
+require('../node_modules/jquery-contextmenu/dist/jquery.contextMenu.js');
 require('jquery-easing');
 
 var App = require('./application');

@@ -74,7 +74,7 @@ module.exports =
     app = _.map(_.filter(appWithIcons,filter), transformName)
 
     _.forEach app, (item)->
-      app.children = _.filter(app.children, filter)
+      item.children = _.filter(item.children, filter)
 
     server = _.map(_.filter(sorted[0].children,filter), transformName)
 

@@ -18,6 +18,17 @@ module.exports = Marionette.View.extend({
     setTimeout(function(){
       $('.collapsible').collapsible();
     }, 1000);
+
+    $.contextMenu({
+      // define which elements trigger this menu 
+      selector: "body",
+      // define the elements of the menu 
+      items: {
+          foo: {name: "Foo", callback: function(key, opt){ alert("Foo!"); }},
+          bar: {name: "Bar", callback: function(key, opt){ alert("Bar!") }}
+      }
+      // there's more, have a look at the demos and docs... 
+    });
   },
 
   events: {

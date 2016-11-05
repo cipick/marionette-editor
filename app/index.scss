@@ -1,7 +1,17 @@
-.collapsible-body a span.badge {
+.collapsible-body a span.badge,
+.collapsible-body a img {
   opacity: 0;
   transition: .5s opacity;
 }
+.collapsible-body a:hover img,
 .collapsible-body a:hover span.badge {
    opacity: 1;
+}
+
+@import 'styles/codemirror';
+@import 'styles/codemirror-material';
+@import 'styles/jquery.contextMenu';
+
+.CodeMirror {
+	height: 100%;
 }

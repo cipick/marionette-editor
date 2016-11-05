@@ -10,7 +10,6 @@ module.exports = {
 
       if(this.getRegion('menu')){
         this.getRegion('menu').show(foldersController.getView(filesCollection));
-        window.$('.collapsible').collapsible();
       }
 
       if(this.getRegion('search')){

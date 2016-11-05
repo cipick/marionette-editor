@@ -1,4 +1,4 @@
-var LayoutView = Marionette.View.extend({
+module.exports = Marionette.View.extend({
   el: '#app',
   template: require('../templates/layout.hbs'),
   regions: {
@@ -7,5 +7,3 @@ var LayoutView = Marionette.View.extend({
     'main': '[data-region="main"]',
   }
 })
-
-module.exports = LayoutView;

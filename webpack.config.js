@@ -22,7 +22,7 @@ module.exports = {
       },
       { 
         test: /\.hbs$/,
-        loader: "handlebars-loader"
+        loader: "handlebars-loader?helperDirs[]=" + __dirname + "/app/templates/helpers"
       }
     ]
   },
@@ -37,15 +37,15 @@ module.exports = {
       //   forms: false,
       //   scroll: false
       // }
-    }),
+    }, {reload: false}),
     new webpack.ProvidePlugin({
       $: "jquery",
+      jquery: 'jquery',
       jQuery: "jquery",
       "window.jQuery": "jquery",
       "_": "underscore",
       Backbone: 'backbone',
-      Marionette: 'backbone.marionette',
-      materialize: 'materialize-css'
+      Marionette: 'backbone.marionette'
     })
   ]
 };

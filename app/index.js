@@ -1,12 +1,14 @@
 require('./index.scss');
+require('./vendor/collapsible.js');
+require('../node_modules/jquery-contextmenu/dist/jquery.contextMenu.js');
+require('jquery-easing');
+
+var App = require('./application');
+var FilesCollection = require('./collections/files');
 
 $(document).ready(function(){
-
-  var Files = require('./collections/files');
-  var filesCollection = new Files();
-
+  var filesCollection = new FilesCollection();
   filesCollection.fetch().done(function(){
-    var LayoutController = require('./controllers/layout');
-    LayoutController.render(filesCollection);
+  	App.start(filesCollection);
   })
 });
